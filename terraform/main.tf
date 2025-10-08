@@ -19,7 +19,7 @@ resource "aws_key_pair" "ec2_key_pair" {
 }
 
 # Store the key-pair in a file
-resource "local_file" "ec2_key_pair" {
+resource "local_sensitive_file" "ec2_key_pair" {
   content  = tls_private_key.ec2_key.private_key_pem
   filename = "${path.module}/runner.pem"
   file_permission = "0400"
@@ -36,5 +36,6 @@ resource "aws_instance" "ec2_instance" {
   tags = {
     Name = each.value.name
   }
+
 }
 
