@@ -1,0 +1,17 @@
+*.pem
+kk_*.csv
+
+# Terraform state and plan files
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+# Terraform working directory and lock file
+.terraform/
+.terraform.lock.hcl
+
+# Optional: Ignore IDE or editor files
+*.swp
+*.swo
+.vscode/
+.idea/
